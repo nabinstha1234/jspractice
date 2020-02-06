@@ -14,7 +14,7 @@ function sayLet() {
   for (let i = 0; i < 5; i++) {
     console.log(i);
   }
-  // console.log(i); //it throws error here in case of var key
+  // console.log(i); //it throws error here in case of let key
 }
 sayLet();
 
@@ -236,3 +236,64 @@ const num2 = [...number, ...num1]; //unpack garera concatinate garxa
 console.log(num2);
 console.log(...number); //unpack garxa array lai
 console.log(number);
+
+// spread operator rest parameter
+const [g, c, ...f] = ["a", "b", 1, 2, 3];
+console.log(f);
+//function using rest parameter
+function sum(...arg) {
+  let sum1 = 0;
+  for (let i = 0; i < arg.length; i++) {
+    sum1 = sum1 + arg[i];
+  }
+  return sum1;
+}
+
+console.log(sum(1, 2, 3, 4, 5, 6, 6, 7, 8, 9));
+
+// arrow function
+const number1 = [1, 2, 3, 4, 5, 6, 7];
+
+function doublwThNumber(Number) {
+  const newNumber = Number.map(function(num) {
+    return num * 2;
+  });
+  return newNumber;
+}
+
+console.log(doublwThNumber(number1));
+
+// done using arrow function
+
+const double = number123 => {
+  const newNumber = number123.map(num => {
+    return num * 2;
+  });
+  return newNumber;
+};
+console.log(double(number1));
+const namanste = () => {}; //arrow function syntax
+//eg
+
+const namaste1 = name => {
+  console.log("hello" + name);
+};
+
+namaste1("nabin");
+
+const drink = args => {
+  return args == "coffee" ? 1 : 2;
+  // if (args == "coffee") return 1;
+  // else if (args == "tea") return 2;
+  // else return 3;
+};
+
+console.log(drink("coffee"));
+
+//map
+const array = [1, 2, 3, 4, 5, 6, 7];
+const arrayfun = array => {
+  return array.map(num => num * num);
+};
+
+console.log(arrayfun(array));
